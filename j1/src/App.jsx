@@ -3,8 +3,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Name,{Pi,Age} from "./Name"
+import Counter from './counter'
 function App() {
-  const [count, setCount] = useState(0)
+  const [counts, setCounts] = useState(0)
 
   return (
     <>
@@ -17,12 +18,14 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      console.log(Pi,Age)
+      {/* console.log(Pi,Age) */}
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={() => setCounts((counts) => counts + 1)}>
+          count is {counts}
         </button>
-        <Name/>
+        <Name name="Raheem" course="MERN STACK"/>
+        <Counter sno={1} setCounts={setCounts} init={1}/>
+        <Counter sno={2} setCounts={setCounts} init={1}/>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
